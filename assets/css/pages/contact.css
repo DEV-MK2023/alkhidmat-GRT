@@ -1,0 +1,96 @@
+/* ==========================================
+   CONTACT PAGE
+========================================== */
+
+.contact-info{
+    padding:100px 0;
+}
+
+.contact-card{
+    text-align:center;
+    padding:40px 25px;
+}
+
+.contact-icon{
+    font-size:3rem;
+    margin-bottom:20px;
+}
+
+.contact-card h3{
+    margin-bottom:10px;
+}
+
+/* FORM */
+
+.contact-form-section{
+    padding:100px 0;
+}
+
+.contact-grid{
+    align-items:center;
+}
+
+.contact-form-content h2{
+    margin-bottom:20px;
+}
+
+.contact-form{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+.contact-form input,
+.contact-form textarea{
+
+    width:100%;
+
+    padding:18px;
+
+    border:1px solid var(--border-color);
+
+    border-radius:12px;
+
+    font-size:1rem;
+}
+
+.contact-form textarea{
+    resize:none;
+}
+
+/* MAP */
+
+.contact-map{
+    padding:100px 0;
+}
+
+.map-placeholder{
+
+    height:450px;
+
+    background:#e5e7eb;
+
+    border-radius:20px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:1.2rem;
+
+    font-weight:600;
+
+    color:#555;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+    .contact-grid{
+        grid-template-columns:1fr;
+    }
+
+}

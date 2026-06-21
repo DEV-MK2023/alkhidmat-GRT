@@ -1,0 +1,79 @@
+/* ==========================================
+   VIDEOS PAGE
+========================================== */
+
+.featured-video{
+    padding:100px 0;
+}
+
+.featured-video-frame{
+    position:relative;
+    width:100%;
+    padding-top:56.25%;
+    overflow:hidden;
+    border-radius:20px;
+    box-shadow:var(--shadow-lg);
+}
+
+.featured-video-frame iframe{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+}
+
+.video-filters{
+    padding:60px 0;
+}
+
+.videos-page{
+    padding:60px 0 100px;
+}
+
+.videos-grid{
+    gap:40px;
+}
+
+.video-card h3{
+    margin-top:15px;
+    text-align:center;
+}
+
+.video-frame{
+    position:relative;
+    width:100%;
+    padding-top:56.25%;
+    overflow:hidden;
+    border-radius:15px;
+}
+
+.video-frame iframe{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+}
+
+.video-card{
+    transition:.3s;
+}
+
+.video-card:hover{
+    transform:translateY(-8px);
+}
+
+.video-subscribe{
+    padding:100px 0;
+    background:var(--primary-gradient);
+}
+
+.subscribe-box{
+    text-align:center;
+    color:white;
+}
+
+.subscribe-box p{
+    color:rgba(255,255,255,.85);
+    max-width:700px;
+    margin:20px auto 30px;
+}

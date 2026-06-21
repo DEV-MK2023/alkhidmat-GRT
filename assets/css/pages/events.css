@@ -1,0 +1,72 @@
+/* ==========================================
+   EVENTS PAGE
+========================================== */
+
+.events-page{
+    padding:100px 0;
+}
+
+.events-list{
+    display:flex;
+    flex-direction:column;
+    gap:25px;
+}
+
+.event-item{
+    display:flex;
+    align-items:center;
+    gap:25px;
+    padding:30px;
+}
+
+.event-date{
+    min-width:90px;
+    height:90px;
+    background:var(--primary-gradient);
+    color:white;
+
+    border-radius:15px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+
+.event-date span{
+    font-size:2rem;
+    font-weight:800;
+}
+
+.event-info h3{
+    margin-bottom:10px;
+}
+
+.event-info p{
+    margin-bottom:10px;
+}
+
+.events-cta{
+    padding:100px 0;
+    background:var(--primary-gradient);
+}
+
+.events-cta-box{
+    text-align:center;
+    color:white;
+}
+
+.events-cta-box p{
+    color:rgba(255,255,255,.85);
+    margin:20px auto 30px;
+    max-width:700px;
+}
+
+@media(max-width:768px){
+
+    .event-item{
+        flex-direction:column;
+        text-align:center;
+    }
+
+}

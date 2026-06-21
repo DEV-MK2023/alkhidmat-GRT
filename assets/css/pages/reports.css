@@ -1,0 +1,58 @@
+/* ==========================================
+   REPORTS PAGE
+========================================== */
+
+.reports-intro{
+    padding:100px 0 50px;
+}
+
+.reports-page{
+    padding:50px 0 100px;
+}
+
+.report-item{
+    padding:40px 30px;
+    text-align:center;
+}
+
+.report-icon{
+    font-size:3rem;
+    margin-bottom:20px;
+}
+
+.report-item h3{
+    font-size:1.4rem;
+    margin-bottom:15px;
+}
+
+.report-item p{
+    margin-bottom:25px;
+}
+
+.report-item .btn{
+    width:100%;
+}
+
+.reports-cta{
+    padding:100px 0;
+    background:var(--primary-gradient);
+}
+
+.reports-cta-box{
+    text-align:center;
+    color:white;
+}
+
+.reports-cta-box p{
+    max-width:700px;
+    margin:20px auto 30px;
+    color:rgba(255,255,255,.85);
+}
+
+@media(max-width:768px){
+
+    .report-item{
+        padding:30px 20px;
+    }
+
+}

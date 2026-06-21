@@ -1,0 +1,83 @@
+/* ==========================================
+   VOLUNTEER PAGE
+========================================== */
+
+.volunteer-benefits{
+    padding:100px 0;
+}
+
+.benefit-card{
+    text-align:center;
+    padding:40px 25px;
+}
+
+.benefit-icon{
+    font-size:3rem;
+    margin-bottom:20px;
+}
+
+.benefit-card h3{
+    margin-bottom:12px;
+}
+
+/* FORM */
+
+.volunteer-form-section{
+    padding:100px 0;
+}
+
+.volunteer-form{
+    max-width:800px;
+    margin:auto;
+
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+.volunteer-form input,
+.volunteer-form textarea{
+
+    width:100%;
+
+    padding:18px;
+
+    border:1px solid var(--border-color);
+
+    border-radius:12px;
+
+    font-size:1rem;
+}
+
+.volunteer-form textarea{
+    resize:none;
+}
+
+.volunteer-form button{
+    width:fit-content;
+}
+
+/* CTA */
+
+.volunteer-final-cta{
+    padding:100px 0;
+    background:var(--primary-gradient);
+}
+
+.volunteer-cta-content{
+    text-align:center;
+    color:white;
+}
+
+.volunteer-cta-content p{
+    color:rgba(255,255,255,.85);
+    margin-top:15px;
+}
+
+@media(max-width:768px){
+
+    .volunteer-form button{
+        width:100%;
+    }
+
+}
