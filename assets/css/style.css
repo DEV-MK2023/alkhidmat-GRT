@@ -403,9 +403,62 @@ p {
 }
 
 .logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  /* Spacing between emblem and text */
+  text-decoration: none;
+}
 
-  color: black;
+.logo-icon-wrapper {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+  /* Clips out the rest of the wide banner text */
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background: transparent;
+}
 
+.nav-logo {
+  height: 100%;
+  width: auto;
+  object-fit: contain;
+  transform: scale(1.1);
+  /* Slightly scales up the circle emblem to fit cleanly */
+}
+
+/* Typography Styles */
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.logo-main {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--white-color);
+  /* White for the transparent hero header state */
+  letter-spacing: 0.3px;
+  transition: var(--transition);
+}
+
+.logo-sub {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  /* Matches your beautiful yellow accent color */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* --- Scrolled Navbar States --- */
+/* When page scrolls down, change the text color to dark slate to match your theme */
+.navbar.scrolled .logo-main {
+  color: var(--text-color);
 }
 
 .logo h2 {
@@ -422,9 +475,9 @@ p {
 
 }
 
-.navbar.scrolled .logo {
+.navbar.scrolled .nav-logo {
 
-  color: var(--text-color);
+  height: 98px;
 
 }
 
@@ -448,8 +501,23 @@ p {
   position: relative;
   font-size: 0.95rem;
   font-weight: 600;
+}
+
+/* 1. Force all main navigation links to be white by default on the transparent home navbar */
+.home .navbar .nav-links>li>a {
   color: var(--white-color);
   transition: var(--transition);
+}
+
+/* 2. When the user scrolls and your JS adds the '.scrolled' class, turn the links dark slate */
+.home .navbar.scrolled .nav-links>li>a {
+  color: var(--text-color);
+}
+
+/* 3. Keep your hover effect bright and visible across both states */
+.home .navbar .nav-links>li>a:hover,
+.home .navbar.scrolled .nav-links>li>a:hover {
+  color: var(--accent-color);
 }
 
 .nav-links>li>a::after {
@@ -654,7 +722,7 @@ p {
   line-height: 1.1;
   margin-bottom: 20px;
   animation: fadeUp 1s ease forwards;
-  
+
   /* Soft, broad text shadow to add subtle contrast against busy backgrounds */
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
