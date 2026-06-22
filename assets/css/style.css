@@ -7,8 +7,7 @@
    GOOGLE FONTS
 ========================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap');
 /* ==========================================
    CSS VARIABLES
 ========================================== */
@@ -30,24 +29,24 @@
   /* Gradients */
 
   --primary-gradient: linear-gradient(135deg,
-      #0E7A43,
-      #17A85C);
+      #0056A6,
+      #1B75D0);
 
   --dark-gradient: linear-gradient(135deg,
-      #085A31,
-      #0E7A43);
+      #003E7A,
+      #0056A6);
 
-  --primary-color: #0E7A43;
-  --primary-dark: #085A31;
-  --primary-light: #17A85C;
+  --primary-color: #0056A6;
+  --primary-dark: #003E7A;
+  --primary-light: #1B75D0;
 
   --accent-color: #F4B400;
 
   --white-color: #ffffff;
   --black-color: #000000;
 
-  --text-color: #1F2937;
-  --text-light: #6B7280;
+  --text-color: #1E293B;
+  --text-light: #64748B;
 
   --bg-light: #F8FAFC;
   --bg-section: #F1F5F9;
@@ -94,7 +93,7 @@ html {
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Manrope', sans-serif;
   color: var(--text-color);
   background: var(--white-color);
   overflow-x: hidden;
@@ -155,21 +154,21 @@ h6 {
 }
 
 h1 {
-  font-size: 3.2rem;
+  font-size: 4rem;
 }
 
 h2 {
-  font-size: 2.4rem;
+  font-size: 2.8rem;
 }
 
 h3 {
-  font-size: 1.5rem;
+  font-size: 1.35rem;
 }
 
 p {
   color: var(--text-light);
-  font-size: 1rem;
-  line-height: 1.75;
+  font-size: 1.05rem;
+  line-height: 1.8;
 }
 
 /* ==========================================
@@ -182,23 +181,39 @@ p {
 }
 
 .section-subtitle {
+  display: inline-block;
+
+  padding: 10px 20px;
+
+  border-radius: 50px;
+
+  background: rgba(0, 86, 166, 0.08);
+
   color: var(--primary-color);
-  font-weight: 600;
-  margin-bottom: 10px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
+
   font-size: 0.85rem;
+  font-weight: 700;
+
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+
+  border: 1px solid rgba(0, 86, 166, 0.15);
 }
 
 .section-title {
   margin-bottom: 15px;
-  font-size: 2.6rem;
+  font-size: 2.8rem;
   font-weight: 800;
 }
 
 .section-description {
   max-width: 700px;
   margin: auto;
+  font-size: 1.1rem;
+  /* Slightly upscale the reading baseline */
+  color: #475569;
+  /* Drop down slightly from #64748B to a richer slate gray */
+  line-height: 1.8;
 }
 
 /* ==========================================
@@ -395,7 +410,7 @@ p {
 
 .logo h2 {
 
-  font-size: 1.8rem;
+  font-size: 1.6rem;
 
   font-weight: 800;
 
@@ -431,6 +446,10 @@ p {
 
 .nav-links>li>a {
   position: relative;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--white-color);
+  transition: var(--transition);
 }
 
 .nav-links>li>a::after {
@@ -545,6 +564,16 @@ p {
   background: var(--primary-dark);
 }
 
+.primary-btn {
+  background: var(--primary-color);
+  color: white;
+}
+
+.primary-btn:hover {
+  transform: translateY(-3px);
+  background: var(--primary-dark);
+}
+
 .secondary-btn {
   border: 2px solid white;
   color: white;
@@ -599,7 +628,7 @@ p {
   display: flex;
   align-items: center;
   color: white;
-  background: url("../images/hero.jpg") center/cover no-repeat;
+  background: url("../images//hero/hero.jpg") center/cover no-repeat;
 }
 
 /* dark overlay */
@@ -607,8 +636,8 @@ p {
   position: absolute;
   inset: 0;
   background: linear-gradient(to right,
-      rgba(0, 0, 0, 0.75),
-      rgba(0, 0, 0, 0.4));
+      rgba(0, 43, 91, .85),
+      rgba(0, 86, 166, .55));
 }
 
 /* content */
@@ -625,6 +654,9 @@ p {
   line-height: 1.1;
   margin-bottom: 20px;
   animation: fadeUp 1s ease forwards;
+  
+  /* Soft, broad text shadow to add subtle contrast against busy backgrounds */
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 .hero-subtitle {
@@ -633,6 +665,7 @@ p {
   line-height: 1.6;
   margin-bottom: 30px;
   opacity: 0.9;
+  color: rgba(255, 255, 255, 0.9);
   animation: fadeUp 1.3s ease forwards;
 }
 
@@ -770,6 +803,12 @@ p {
   transition: var(--transition);
   position: relative;
   overflow: hidden;
+
+  /* Ensures unified internal grid scaling */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
 }
 
 /* hover effect */
@@ -835,6 +874,10 @@ p {
   border-radius: var(--radius-lg);
   transition: var(--transition);
   background: var(--white-color);
+
+  /* Add these to turn the card itself into a flex container */
+  display: flex;
+  flex-direction: column;
 }
 
 /* image */
@@ -858,6 +901,11 @@ p {
 /* content */
 .project-content {
   padding: 25px;
+
+  /* Let the content block take up all remaining vertical space */
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
 
 .project-content h3 {
@@ -867,8 +915,11 @@ p {
 
 .project-content p {
   color: var(--text-light);
-  margin-bottom: 15px;
-  line-height: 1.5;
+  margin-bottom: 20px;
+  line-height: 1.6;
+
+  /* Pushes the link explicitly to the very bottom of the flex card */
+  margin-top: auto;
 }
 
 /* link */
@@ -900,6 +951,10 @@ p {
   border-radius: var(--radius-lg);
   background: var(--white-color);
   transition: var(--transition);
+
+  /* Add these to turn the card itself into a flex container */
+  display: flex;
+  flex-direction: column;
 }
 
 .news-card:hover {
@@ -927,6 +982,11 @@ p {
 /* content */
 .news-content {
   padding: 20px;
+
+  /* Let the content block take up all remaining vertical space */
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
 
 .news-date {
@@ -942,7 +1002,10 @@ p {
 
 .news-content p {
   color: var(--text-light);
-  margin-bottom: 15px;
+  margin-bottom: 20px;
+
+  /* Pushes the link explicitly to the very bottom of the flex card */
+  margin-top: auto;
 }
 
 /* link */
@@ -1040,6 +1103,13 @@ p {
    VIDEO HIGHLIGHTS
 ========================================== */
 
+/* ==========================================
+   VIDEO HIGHLIGHTS
+========================================== */
+/* ==========================================
+   VIDEO HIGHLIGHTS
+========================================== */
+
 .video-highlights {
   padding: 100px 0;
 }
@@ -1048,41 +1118,61 @@ p {
   margin-top: 50px;
 }
 
-/* video card */
 .video-card {
-  text-align: center;
-  transition: var(--transition);
-}
-
-.video-card h3 {
-  margin-top: 15px;
-  font-size: 1.1rem;
-}
-
-/* video frame */
-.video-frame {
-  position: relative;
-  width: 100%;
-  padding-top: 56.25%;
-  /* 16:9 ratio */
-  border-radius: var(--radius-lg);
   overflow: hidden;
-  box-shadow: var(--shadow-sm);
-  transition: var(--transition);
 }
 
-.video-frame iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
+.video-thumbnail {
+  height: 250px;
+  overflow: hidden;
+}
+
+.video-thumbnail img {
   width: 100%;
   height: 100%;
+  object-fit: cover;
+  transition: var(--transition);
 }
 
-/* hover effect */
-.video-card:hover .video-frame {
-  transform: translateY(-8px);
-  box-shadow: var(--shadow-md);
+.video-card:hover .video-thumbnail img {
+  transform: scale(1.08);
+}
+
+.video-content {
+  padding: 20px;
+  text-align: center;
+}
+
+.video-content h3 {
+  font-size: 1.15rem;
+  margin: 0;
+}
+
+/* ==========================================
+   VIEW ALL VIDEOS BUTTON
+========================================== */
+
+.view-all-videos {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.btn-view-all {
+  display: inline-block;
+  padding: 12px 28px;
+  background: #1e3a8a;
+  /* you can match your theme color */
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  border-radius: 25px;
+  transition: 0.3s ease;
+  font-weight: 500;
+}
+
+.btn-view-all:hover {
+  background: #163172;
+  transform: translateY(-3px);
 }
 
 /* ==========================================
@@ -1135,9 +1225,14 @@ p {
 ========================================== */
 
 .volunteer-cta {
-  padding: 100px 0;
-  background: var(--primary-gradient);
-  color: white;
+  background:
+    linear-gradient(rgba(0, 0, 0, .65),
+      rgba(0, 0, 0, .65)),
+    url("../images/volunteers.png");
+
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .volunteer-box {
@@ -1275,9 +1370,12 @@ p {
 ========================================== */
 
 .site-footer {
-  background: #0a1020;
+  background: #002B5B;
   color: #ffffff;
-  padding: 80px 0 20px;
+  padding: 90px 0 30px;
+  /* Enhanced breathability spacing */
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  /* Soft split divider */
 }
 
 /* grid layout */
@@ -1388,4 +1486,41 @@ img {
 .event-card:hover {
   transform: translateY(-8px);
   box-shadow: var(--shadow-md);
+}
+
+/* ==========================================
+   ABOUT PREVIEW
+========================================== */
+
+.about-preview {
+  background: white;
+}
+
+.about-preview-grid {
+  align-items: center;
+  gap: 60px;
+}
+
+.about-preview-image img {
+
+  width: 100%;
+  height: 450px;
+
+  object-fit: cover;
+
+  border-radius: var(--radius-lg);
+
+  box-shadow: var(--shadow-md);
+}
+
+.about-preview-content h2 {
+
+  margin: 15px 0 20px;
+
+  font-size: 2.5rem;
+}
+
+.about-preview-content p {
+
+  margin-bottom: 20px;
 }
