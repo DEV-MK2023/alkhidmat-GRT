@@ -363,26 +363,27 @@ p {
    NAVBAR
 ========================================== */
 
+/* ==========================================
+   NAVBAR & LOGO STYLES (FIXED & CLEANED)
+========================================== */
+
 .navbar {
-  background: white;
+  background: var(--white-color);
   position: fixed;
   top: 0;
   left: 0;
-
   width: 100%;
-
   height: 90px;
-
   z-index: 1000;
-
-  transition: all .3s ease;
-
+  transition: all 0.3s ease;
 }
 
+/* Homepage default transparent header */
 .home .navbar {
   background: transparent;
 }
 
+/* Scrolled Navbar state (Both home and inner pages) */
 .navbar.scrolled {
   background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(12px);
@@ -391,35 +392,34 @@ p {
 }
 
 .navbar-container {
-
   height: 100%;
-
   display: flex;
-
   align-items: center;
-
   justify-content: space-between;
-
 }
+
+/* ==========================================
+   LOGO COMPONENTS
+========================================== */
 
 .logo {
   display: flex;
   align-items: center;
   gap: 12px;
-  /* Spacing between emblem and text */
   text-decoration: none;
 }
 
 .logo-icon-wrapper {
-  width: 80px;
-  height: 80px;
+  width: 65px;
+  /* Sized to sit cleanly within the 90px height */
+  height: 65px;
   border-radius: 50%;
   overflow: hidden;
-  /* Clips out the rest of the wide banner text */
   display: flex;
   align-items: center;
   justify-content: flex-start;
   background: transparent;
+  transition: var(--transition);
 }
 
 .nav-logo {
@@ -427,21 +427,27 @@ p {
   width: auto;
   object-fit: contain;
   transform: scale(1.1);
-  /* Slightly scales up the circle emblem to fit cleanly */
 }
 
-/* Typography Styles */
+/* Subtle logo sizing update when navbar is scrolled down */
+.navbar.scrolled .logo-icon-wrapper {
+  width: 55px;
+  height: 55px;
+}
+
+/* Typography Layout */
 .logo-text {
   display: flex;
   flex-direction: column;
   line-height: 1.2;
 }
 
+/* Default Colors (Inner Pages top state / Global Scrolled state) */
 .logo-main {
   font-size: 1.15rem;
   font-weight: 800;
-  color: var(--white-color);
-  /* White for the transparent hero header state */
+  color: var(--primary-color);
+  /* Primary theme blue */
   letter-spacing: 0.3px;
   transition: var(--transition);
 }
@@ -449,58 +455,45 @@ p {
 .logo-sub {
   font-size: 0.9rem;
   font-weight: 700;
-  color: var(--accent-color);
-  /* Matches your beautiful yellow accent color */
+  color: var(--primary-color);
+  /* Accent yellow/gold */
   text-transform: uppercase;
   letter-spacing: 1px;
+  transition: var(--transition);
 }
 
-/* --- Scrolled Navbar States --- */
-/* When page scrolls down, change the text color to dark slate to match your theme */
-.navbar.scrolled .logo-main {
-  color: var(--text-color);
+/* ==========================================
+   HOMEPAGE SPECIFIC OVERRIDES
+========================================== */
+
+/* Forces text to be pure white ONLY when at the top of the homepage */
+.home .navbar:not(.scrolled) .logo-main {
+  color: var(--white-color);
 }
 
-.logo h2 {
-
-  font-size: 1.6rem;
-
-  font-weight: 800;
-
+.home .navbar:not(.scrolled) .logo-sub {
+  color: var(--white-color);
 }
 
-.logo span {
-
-  color: var(--accent-color);
-
-}
-
-.navbar.scrolled .nav-logo {
-
-  height: 98px;
-
-}
+/* ==========================================
+   NAVIGATION LINKS
+========================================== */
 
 .nav-links {
-
   display: flex;
-
   align-items: center;
-
   gap: 35px;
-
 }
 
 .nav-links>li {
-
   position: relative;
-
 }
 
 .nav-links>li>a {
   position: relative;
   font-size: 0.95rem;
   font-weight: 600;
+  transition: var(--transition);
 }
 
 /* 1. Force all main navigation links to be white by default on the transparent home navbar */
