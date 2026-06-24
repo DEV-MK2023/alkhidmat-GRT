@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO -->
+    <title>Donate Now | Alkhidmat Foundation Gujrat</title>
+    <meta name="description" content="Support Alkhidmat Foundation Gujrat. Make a secure online donation toward Zakat, Clean Water projects, Education, or emergency appeals.">
+
+    <!-- Font Awesome Link for Online Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/pages/donate.css">
+    <link rel="stylesheet" href="../assets/css/responsive.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR COMPONENT -->
+    <div id="navbar"></div>
+
+    <main>
+
+        <!-- HERO SECTION -->
+        <section class="page-hero">
+            <div class="page-hero-overlay"></div>
+            <div class="container page-hero-content">
+                <h1>Make a Donation Online</h1>
+                <p>Give Your Zakat, Sadaqah, and General Donations securely using Debit/Credit Card, JazzCash, or EasyPaisa.</p>
+            </div>
+        </section>
+
+        <!-- DONATION SYSTEM -->
+        <section class="donation-section">
+            <div class="container">
+                
+                <div class="donation-card-layout">
+                    
+                    <div class="donation-header">
+                        <h2>Please Select Cause(s) for Donation</h2>
+                        <!-- Real-time search bar from reference image -->
+                        <div class="search-box">
+                            <input type="text" id="causeSearch" placeholder="Search causes...">
+                            <button class="btn-clear" onclick="clearSearch()">Clear</button>
+                        </div>
+                    </div>
+
+                    <!-- Causes Accordion Wrapper -->
+                    <div class="causes-container">
+                        
+                        <!-- Cause Item 1 -->
+                        <div class="cause-row">
+                            <div class="cause-main">
+                                <span class="cause-title">Give Water (Sadaqah Jariyah)</span>
+                                <div class="donation-action">
+                                    <input type="number" placeholder="Amount (PKR)" class="amount-input" min="0">
+                                    <button class="btn btn-add">Add</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Cause Item 2 -->
+                        <div class="cause-row">
+                            <div class="cause-main">
+                                <span class="cause-title">Zakat / Sadaqah</span>
+                                <div class="donation-action">
+                                    <input type="number" placeholder="Amount (PKR)" class="amount-input" min="0">
+                                    <button class="btn btn-add">Add</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Cause Item 3 -->
+                        <div class="cause-row">
+                            <div class="cause-main">
+                                <span class="cause-title">Wherever Needed Most (General Fund)</span>
+                                <div class="donation-action">
+                                    <input type="number" placeholder="Amount (PKR)" class="amount-input" min="0">
+                                    <button class="btn btn-add">Add</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Cause Item 4 -->
+                        <div class="cause-row">
+                            <div class="cause-main">
+                                <span class="cause-title">Free IT Education (Sponsor Bano Qabil)</span>
+                                <div class="donation-action">
+                                    <input type="number" placeholder="Amount (PKR)" class="amount-input" min="0">
+                                    <button class="btn btn-add">Add</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Cause Item 5 -->
+                        <div class="cause-row">
+                            <div class="cause-main">
+                                <span class="cause-title">Orphan Care Program</span>
+                                <div class="donation-action">
+                                    <input type="number" placeholder="Amount (PKR)" class="amount-input" min="0">
+                                    <button class="btn btn-add">Add</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Cause Item 6 -->
+                        <div class="cause-row">
+                            <div class="cause-main">
+                                <span class="cause-title">Gaza Emergency Appeal</span>
+                                <div class="donation-action">
+                                    <input type="number" placeholder="Amount (PKR)" class="amount-input" min="0">
+                                    <button class="btn btn-add">Add</button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Checkout Summary Section -->
+                    <div class="donation-summary">
+                        <div class="currency-badge">
+                            <span>PKR</span>
+                            <div class="total-display" id="totalAmount">0</div>
+                        </div>
+                        
+                        <div class="zakat-checkbox">
+                            <label class="checkbox-container">
+                                <input type="checkbox" id="isZakat">
+                                <span class="checkmark"></span>
+                                My donation is Zakat
+                            </label>
+                        </div>
+
+                        <button class="btn btn-primary btn-continue">
+                            Continue <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER COMPONENT -->
+    <div id="footer"></div>
+
+    <!-- JS Handling -->
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/components.js"></script>
+
+    <script>
+        loadComponent("navbar", "../components/navbar.html");
+        loadComponent("footer", "../components/footer.html");
+
+        // Interactive calculation and filtering logic
+        const inputs = document.querySelectorAll('.amount-input');
+        const totalDisplay = document.getElementById('totalAmount');
+        const searchInput = document.getElementById('causeSearch');
+        const rows = document.querySelectorAll('.cause-row');
+
+        // Dynamic Total Calculation
+        inputs.forEach(input => {
+            input.addEventListener('input', calculateTotal);
+        });
+
+        function calculateTotal() {
+            let grandTotal = 0;
+            inputs.forEach(input => {
+                let val = parseFloat(input.value) || 0;
+                grandTotal += val;
+            });
+            totalDisplay.innerText = grandTotal.toLocaleString();
+        }
+
+        // Live filtration engine matching search inputs
+        searchInput.addEventListener('input', (e) => {
+            const query = e.target.value.toLowerCase();
+            rows.forEach(row => {
+                const title = row.querySelector('.cause-title').innerText.toLowerCase();
+                if(title.includes(query)) {
+                    row.style.display = "block";
+                } else {
+                    row.style.display = "none";
+                }
+            });
+        });
+
+        function clearSearch() {
+            searchInput.value = '';
+            rows.forEach(row => row.style.display = "block");
+        }
+    </script>
+</body>
+</html>

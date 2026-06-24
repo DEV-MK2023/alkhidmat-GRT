@@ -1,0 +1,221 @@
+/* ==========================================
+   DONATION PAGE STYLING
+========================================== */
+
+/* Hero space fix to prevent underlapping */
+.page-hero {
+    position: relative;
+    background: linear-gradient(135deg, #0d47a1, #4a148c);
+    padding: 160px 0 80px 0;
+    text-align: center;
+    color: #fff;
+}
+
+.donation-section {
+    padding: 80px 0;
+    background: #f8fafc;
+}
+
+.donation-card-layout {
+    background: #ffffff;
+    border-radius: 24px;
+    padding: 40px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.04);
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Header & Search Bar */
+.donation-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #edf2f7;
+    padding-bottom: 20px;
+}
+
+.donation-header h2 {
+    font-size: 1.5rem;
+    color: #1e293b;
+}
+
+.search-box {
+    display: flex;
+    gap: 10px;
+}
+
+.search-box input {
+    padding: 10px 16px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    outline: none;
+    font-size: 0.95rem;
+    width: 240px;
+}
+
+.btn-clear {
+    background: #ef4444;
+    color: white;
+    border: none;
+    padding: 10px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+/* Row Rows Structure */
+.causes-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.cause-row {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 16px 24px;
+    transition: all 0.2s ease;
+}
+
+.cause-row:hover {
+    border-color: #0d47a1;
+    background: #fff;
+    box-shadow: 0 4px 12px rgba(13, 71, 161, 0.04);
+}
+
+.cause-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.cause-title {
+    font-weight: 600;
+    color: #0d47a1;
+    font-size: 1.1rem;
+}
+
+.donation-action {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.amount-input {
+    padding: 10px 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    width: 150px;
+    text-align: right;
+    font-weight: 600;
+    outline: none;
+}
+
+.btn-add {
+    background: #0d47a1;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.2s;
+}
+
+.btn-add:hover {
+    background: #0a3a85;
+}
+
+/* Summary Box Styling */
+.donation-summary {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 20px;
+    border-top: 2px solid #edf2f7;
+    padding-top: 30px;
+}
+
+.currency-badge {
+    display: flex;
+    align-items: center;
+    border: 2px solid #0d47a1;
+    border-radius: 10px;
+    overflow: hidden;
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.currency-badge span {
+    background: #0d47a1;
+    color: white;
+    padding: 12px 20px;
+}
+
+.total-display {
+    padding: 12px 30px;
+    min-width: 140px;
+    text-align: right;
+    color: #1e293b;
+}
+
+/* Custom Checkbox design */
+.zakat-checkbox {
+    font-size: 1rem;
+    color: #475569;
+    user-select: none;
+    cursor: pointer;
+}
+
+.btn-continue {
+    padding: 14px 40px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 12px;
+    background: #0d47a1;
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 4px 14px rgba(13, 71, 161, 0.3);
+}
+
+.btn-continue:hover {
+    background: #0a3a85;
+}
+
+/* Responsiveness tweaks */
+@media (max-width: 768px) {
+    .donation-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .search-box {
+        width: 100%;
+    }
+    .search-box input {
+        width: 100%;
+    }
+    .cause-main {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .donation-action {
+        width: 100%;
+    }
+    .amount-input {
+        flex-grow: 1;
+    }
+    .donation-summary {
+        align-items: center;
+    }
+}
