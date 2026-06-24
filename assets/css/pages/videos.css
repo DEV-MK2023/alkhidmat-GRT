@@ -1,79 +1,258 @@
 /* ==========================================
-   VIDEOS PAGE
+   1. VIDEOS HERO FRAME (FIXED NAVBAR RESCUE)
 ========================================== */
 
-.featured-video{
-    padding:100px 0;
+.page-hero {
+    position: relative;
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    /* OFFSET FIX: 90px header height + 60px breathing space */
+    padding: 150px 0 80px; 
+
+    background:
+        linear-gradient(rgba(0, 0, 0, .65),
+            rgba(0, 0, 0, .65)),
+        url("../../images/about/about-banner.jpg"); /* Reuses your main global asset path pattern */
+
+    background-size: cover;
+    background-position: center;
+    color: var(--white-color);
+    text-align: center;
 }
 
-.featured-video-frame{
-    position:relative;
-    width:100%;
-    padding-top:56.25%;
-    overflow:hidden;
-    border-radius:20px;
-    box-shadow:var(--shadow-lg);
+.page-hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 50% 50%, rgba(0, 43, 91, 0.2) 0%, transparent 80%);
+    pointer-events: none;
 }
 
-.featured-video-frame iframe{
-    position:absolute;
-    inset:0;
-    width:100%;
-    height:100%;
+.page-hero-content {
+    max-width: 850px;
+    position: relative;
+    z-index: 2;
+    width: 100%;
 }
 
-.video-filters{
-    padding:60px 0;
+.page-hero h1 {
+    font-size: 3.8rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    letter-spacing: -0.5px;
 }
 
-.videos-page{
-    padding:60px 0 100px;
+.page-hero p {
+    color: rgba(255, 255, 255, .9);
+    font-size: 1.15rem;
+    line-height: 1.6;
 }
 
-.videos-grid{
-    gap:40px;
+/* ==========================================
+   2. MAIN FEATURED THEATER COMPONENT
+========================================== */
+
+.featured-video {
+    padding: 80px 0;
 }
 
-.video-card h3{
-    margin-top:15px;
-    text-align:center;
+.featured-video-frame {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%; /* Fixed 16:9 Cinema Aspect Ratio box constraint */
+    overflow: hidden;
+    border-radius: var(--radius-xl);
+    box-shadow: 0 20px 40px rgba(0, 43, 91, 0.12);
+    border: 1px solid #edf2f7;
+    background-color: #000;
 }
 
-.video-frame{
-    position:relative;
-    width:100%;
-    padding-top:56.25%;
-    overflow:hidden;
-    border-radius:15px;
+.featured-video-frame iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
 }
 
-.video-frame iframe{
-    position:absolute;
-    inset:0;
-    width:100%;
-    height:100%;
+/* ==========================================
+   3. REFINED PILL FILTER SYSTEM 
+========================================== */
+
+.video-filters {
+    padding: 40px 0;
+    background-color: #f8fafc;
 }
 
-.video-card{
-    transition:.3s;
+.filter-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
 }
 
-.video-card:hover{
-    transform:translateY(-8px);
+.filter-buttons button {
+    padding: 12px 26px;
+    border: 1px solid #e2e8f0;
+    border-radius: 50px;
+    cursor: pointer;
+    background: var(--white-color);
+    color: var(--text-color);
+    font-weight: 600;
+    font-size: 0.95rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+    transition: var(--transition);
 }
 
-.video-subscribe{
-    padding:100px 0;
-    background:var(--primary-gradient);
+.filter-buttons button:hover {
+    background: #edf2f7;
+    color: var(--primary-color);
+    border-color: #cbd5e1;
 }
 
-.subscribe-box{
-    text-align:center;
-    color:white;
+.filter-buttons button.active {
+    background: var(--primary-color);
+    color: var(--white-color);
+    border-color: var(--primary-color);
+    box-shadow: 0 4px 12px rgba(0, 43, 91, 0.15);
 }
 
-.subscribe-box p{
-    color:rgba(255,255,255,.85);
-    max-width:700px;
-    margin:20px auto 30px;
+/* ==========================================
+   4. SYMMETRICAL RESPONSIVE VIDEO GRID
+========================================== */
+
+.videos-page {
+    padding: 80px 0 100px;
+    background-color: #f8fafc;
+}
+
+.videos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Fixed layout structural delivery */
+    gap: 40px 30px;
+}
+
+.video-card {
+    background: var(--white-color);
+    padding: 15px;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+    transition: var(--transition);
+}
+
+.video-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 25px rgba(0, 43, 91, 0.08);
+}
+
+.video-frame {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%; /* Exact 16:9 frame container block encapsulation */
+    overflow: hidden;
+    border-radius: 12px;
+    background-color: #000;
+}
+
+.video-frame iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.video-card h3 {
+    margin-top: 20px;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-align: center;
+    line-height: 1.4;
+}
+
+/* ==========================================
+   5. ENGAGING CALL-TO-ACTION ZONE
+========================================== */
+
+.video-subscribe {
+    padding: 100px 0;
+    background: var(--primary-gradient);
+}
+
+.subscribe-box {
+    text-align: center;
+    color: var(--white-color);
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+.subscribe-box h2 {
+    font-size: 2.6rem;
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+.subscribe-box p {
+    color: rgba(255, 255, 255, .85);
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 35px;
+}
+
+.subscribe-box .btn-primary {
+    background: var(--white-color);
+    color: var(--primary-color);
+    padding: 16px 40px;
+    font-weight: 700;
+}
+
+.subscribe-box .btn-primary:hover {
+    background: #f3f4f6;
+    transform: translateY(-2px);
+}
+
+/* ==========================================
+   6. RESPONSIVE COMPONENT VIEWPORT OVERRIDES
+========================================== */
+
+@media(max-width: 992px) {
+    .videos-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+
+    .page-hero h1 {
+        font-size: 3rem;
+    }
+}
+
+@media(max-width: 768px) {
+    .featured-video {
+        padding: 60px 0;
+    }
+
+    .page-hero {
+        min-height: 45vh;
+        padding: 130px 0 60px;
+    }
+
+    .page-hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .videos-grid {
+        grid-template-columns: 1fr;
+        max-width: 480px;
+        margin: 0 auto;
+    }
+
+    .subscribe-box h2 {
+        font-size: 2rem;
+    }
 }
