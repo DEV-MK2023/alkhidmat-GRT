@@ -13,9 +13,7 @@
     padding: 150px 0 80px; 
 
     background:
-        linear-gradient(rgba(0, 0, 0, .65),
-            rgba(0, 0, 0, .65)),
-        url("../../images/about/about-banner.jpg"); /* Or your specific programs-banner asset */
+      rgb(3, 101, 193); /* Or your specific programs-banner asset */
 
     background-size: cover;
     background-position: center;
